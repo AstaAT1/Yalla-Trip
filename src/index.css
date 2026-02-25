@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+  --color-logo-dark: #0A3644;
+  --color-logo-sky: #31A8D0;
+  --color-logo-soft: #85B0BF;
+
+  /* Theme Colors */
+  --color-brand: #31A8D0;
+  --color-brand-light: #60c5e7;
+  --color-brand-dark: #1e8bb2;
+}
+
+@layer base {
+  :root {
+    --bg-main: #FFFFFF;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --bg-tertiary: #F1F5F9;
+    
+    --text-main: #0F172A;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-tertiary: #94A3B8;
+    
+    --color-accent: #31A8D0;
+    --border-color: rgba(226, 232, 240, 0.4); 
+    --card-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.02);
+    --card-bg: var(--bg-primary);
+  }
+
+  .dark {
+    --bg-main: #020617;
+    --bg-primary: #020617;
+    --bg-secondary: #0F172A;
+    --bg-tertiary: #1E293B;
+    
+    --text-main: #F8FAFC;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-tertiary: #64748B;
+    
+    --color-accent: #31A8D0;
+    --border-color: rgba(30, 41, 59, 0.4); 
+    --card-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.02);
+    --card-bg: #0F172A;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+  }
+
+  .dark body {
+    background-image: 
+      radial-gradient(circle at 0% 0%, rgba(49, 168, 208, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 100% 100%, rgba(49, 168, 208, 0.05) 0%, transparent 40%),
+      linear-gradient(to bottom, #020617, #0F172A);
+    background-attachment: fixed;
+  }
+
+  /* Custom Scrollbar for modern look */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-main);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 5px;
+    border: 3px solid var(--bg-main);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-tertiary);
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 1200px;
+}
+
+@layer base {
+  button, 
+  a, 
+  [role="button"],
+  .cursor-pointer,
+  input[type="submit"],
+  input[type="button"] {
+    cursor: pointer !important;
+  }
+}
