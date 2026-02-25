@@ -64,7 +64,7 @@ function Welcome() {
           className="mb-8"
         >
           <Link
-            to="/destinations"
+            to="/signUp"
             className="group relative inline-flex items-center gap-3 px-8 py-3 rounded-2xl bg-white text-black font-black text-sm shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-gray-100 active:scale-95"
           >
             Start your trip
